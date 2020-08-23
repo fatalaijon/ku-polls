@@ -6,4 +6,4 @@ A web application for conducting a poll or survey, written in Python using Djang
 
 ## Project Documents
 
-[Vision Statement](./wiki/Vision Statement)
+[Vision Statement](./wiki/Vision%20Statement)
