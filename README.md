@@ -1,4 +1,6 @@
-# Kasetsart Polls
+# Web Polls for Kasetsart University
+
+A Django application.
 
 Polls application for [Individual Software Process](https://cpske.github.io/ISP) course at [Kasetsart University](https://ku.ac.th).
 
