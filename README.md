@@ -7,11 +7,14 @@ and adds additional functionality.
 
 ## Project Documents
 
+All project-related documents are in the [Project Wiki](../../wiki/Home)
+
 [Vision Statement](../../wiki/Vision%20Statement)
 
 [Requirements](../../wiki/Vision%20Statements)
 
-[Project Wiki](../../wiki/Home)
+Iterations
+* [Iteration 1 Plan](../../wiki/Iteration%201%20Plan) and [Task Board](../../projects/1)
 
 ## Licensing
 Contact @fatalaijon to license.
