@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# wiki is a separate repository
+wiki/
+
 # C extensions
 *.so
 
