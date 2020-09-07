@@ -8,6 +8,9 @@ wiki/
 # my config notes
 configure.txt
 
+# IDE files
+.vscode
+
 # C extensions
 *.so
 
