@@ -1,21 +1,25 @@
-from django.shortcuts import render
-from django.http import HttpResponse, Http404
+from django.shortcuts import render, reverse
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Question
+from .models import Question, Choice
 
 """Views to handle requests to the polls app"""
 
 def index(request):
-	"""Show a list of current questions"""
+	"""Show a list of published poll questions"""
 	now = timezone.now()
 	# pub_date__lte=now means pub_date() <= now
 	questions = Question.objects.filter( pub_date__lte=now )
 	context = {'questions': questions, }
 	return render(request, 'polls/index.html', context)
 
-def detail(request, question_id):
-	"""Return a page showing details of a question"""
+def detail(request, pk):
+	"""Return a page showing details of a question, with choices.
+	   Arguments:
+		pk = the question id (primary key)
+	"""
+	question_id = pk
 	try:
 		question = Question.objects.get(pk=question_id)
 	except Question.DoesNotExist:
@@ -23,7 +27,9 @@ def detail(request, question_id):
 	context = {'question': question}
 	return render(request, 'polls/detail.html', context)
 
-def vote(request, question_id):
+def vote(request, pk):
+	"""Record a vote for a poll question."""
+	question_id = pk
 	# lookup the question
 	try:
 		question = Question.objects.get(pk=question_id)
@@ -47,4 +53,16 @@ def vote(request, question_id):
 	# record the vote
 	selected_choice.votes += 1
 	selected_choice.save()
-	return HttpResponseRedirect(reverse('polls:result',args=(question_id,)))
+	return HttpResponseRedirect(reverse('polls:results',args=(question_id,)))
+
+def results(request, pk):
+	"""Show the voting results for a poll question"""
+	question_id = pk
+	try:
+		question = Question.objects.get(pk=question_id)
+	except Question.DoesNotExist:
+		return Http404(f"Question {question_id} does not exist")
+	if not question.is_published():
+		return HttpResponse("Voting not allowed for that question", status=403)
+	context = {'question': question}
+	return render(request, 'polls/results.html', context)

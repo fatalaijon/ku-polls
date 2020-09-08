@@ -1,13 +1,16 @@
 """Mapping of http request paths to handlers (views)"""
 from django.urls import path
 from . import views
+from . import class_views
 
-# define a namespace for urls.  Used in lookups via '{% url name %}'
+# define a namespace for url names.  
+# This name is used to qualify names in the {% url %} and reverse() functions.
+# So you would write '{% url polls:index %}' instead of '{% url index %}' 
 app_name = 'polls'
 
 urlpatterns = [
-	path("", views.index, name='index'),
-	path('<int:question_id>/',         views.detail, name='detail'),
-	#path('<int:question_id>/results/', views.results, name='results'),
-	path('<int:question_id>/vote/',    views.vote, name='vote'),
+	path("",                  class_views.IndexView.as_view(), name='index'),
+	path('<int:pk>/',         class_views.DetailView.as_view(), name='detail'),
+	path('<int:pk>/results/', class_views.ResultsView.as_view(), name='results'),
+	path('<int:pk>/vote/',    views.vote, name='vote'),
 ]

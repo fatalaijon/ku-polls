@@ -10,6 +10,7 @@ configure.txt
 
 # IDE files
 .vscode
+*.swp
 
 # C extensions
 *.so

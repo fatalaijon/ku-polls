@@ -19,7 +19,13 @@ class Question(models.Model):
         now = timezone.now()
         return self.pub_date >= start_date and self.pub_date <= now
     
+        
     def is_current(self) -> bool:
+        """Query if voting is currently allowed for this question"""
+        now = timezone.now()
+        return self.pub_date <= now
+
+    def is_published(self) -> bool:
         """Query if this question has publication date before now"""
         now = timezone.now()
         return self.pub_date <= now
@@ -29,6 +35,9 @@ class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=80)
     votes = models.IntegerField(default=0)
+
+    class Meta:
+        ordering = ['choice_text']
 
     def __str__(self):
         return self.choice_text
