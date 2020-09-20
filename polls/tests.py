@@ -41,6 +41,14 @@ class ViewTests(django.test.TestCase):
     def setUp(self):
         """initialize test fixture"""
         self.client = django.test.Client()
+
+    def test_base_url_redirect(self):
+        """Base URL should redirect to polls index"""
+        response = self.client.get( '/' )
+        self.assertEqual(response.status_code, 302) 
+        polls_url = reverse('polls:index')
+        self.assertRedirects( response, polls_url )
+
     
     def test_index_shows_current_poll(self):
         date = timezone.now()
