@@ -4,10 +4,12 @@ from django.db import models
 # a date that's compabible with Django DateTimeField
 from django.utils import timezone
 
+
 class Question(models.Model):
-    """A poll question with some text, starting date, and closing date"""
+    """A poll question with some text, starting date, and closing date."""
     question_text = models.CharField(max_length=80)
     pub_date = models.DateTimeField('poll starting date')
+    end_date = models.DateTimeField('poll closing date', null=True)
 
     def __str__(self):
         """string representation of a question"""
@@ -18,27 +20,19 @@ class Question(models.Model):
         start_date = timezone.now() - datetime.timedelta(days=1)
         now = timezone.now()
         return self.pub_date >= start_date and self.pub_date <= now
-    
         
-    def is_current(self) -> bool:
+    def can_vote(self) -> bool:
         """Query if voting is currently allowed for this question"""
         now = timezone.now()
-        return self.pub_date <= now
+        if self.pub_date > now:
+            return False
+        # if no closing date then voting allowed indefinitely
+        if not self.end_date:
+            return True
+        return now <= self.end_date
 
     def is_published(self) -> bool:
-        """Query if this question has publication date before now"""
+        """Query if this question has publication date before now."""
         now = timezone.now()
         return self.pub_date <= now
 
-class Choice(models.Model):
-    """A possible answer to a poll question"""
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=80)
-    votes = models.IntegerField(default=0)
-
-    class Meta:
-        ordering = ['choice_text']
-
-    def __str__(self):
-        return self.choice_text
-	
