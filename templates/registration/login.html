@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Login</title>
+</head>
+<body>
+
+{% if messages %}
+<div class="messages">
+{% for msg in messages %}
+<p class="{{ msg.tags }}">{{msg}}</p>
+{% endfor %}
+</div>
+{% endif %}
+
+<h2>Login</h2>
+<form method="post">
+   {% csrf_token %}
+   {{ form.as_p }}
+   <p>
+   <button type="submit">Login</button>
+   </p>
+   <input type="hidden" name="next" value="{{next}}"/>
+</form>
+<p>
+<a href="{% url 'password_reset' %}>Forgot password?</a>
+</p>
+</body>
+</thml>
+
