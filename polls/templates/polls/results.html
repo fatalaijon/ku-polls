@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <h2>{{question.question_text}}</h2>
 
 <table border='0'>
@@ -6,4 +9,6 @@
 {% endfor %}
 </table>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+Back to <a href="{% url 'polls:index' %}">List of Polls</a>
+
+{% endblock %}
