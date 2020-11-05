@@ -47,7 +47,7 @@ def vote(request, pk):
 		question = Question.objects.get(pk=question_id)
 	except Question.DoesNotExist:
 		return Http404(f"Question {question_id} does not exist")
-	if not question.is_current():
+	if not question.can_vote():
 		return HttpResponse("Voting not allowed for that question", status=403)
 	# get the user's choice
 	try:
