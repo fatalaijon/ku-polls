@@ -7,18 +7,21 @@ and adds additional functionality.
 
 ## Requirements
 
-Requires Python 3.6 and the Python packages listed in [requirements.txt](requirements.txt).
+Requires Python 3.6 or newer and the packages listed in [requirements.txt](requirements.txt).
 
-Install required packages using `pip install -r requirements.txt`.
+Install required packages using `pip install -r requirements.txt` or create a virtualenv.
 
 ## Running the Application
 
-1. Edit `.env` in the projet base directory and set these variables:
+1. Edit `.env` in the project root directory and set these variables:
    ```
    SECRET_KEY=a-secret-key
    DEBUG=False   (set to True for development)
+   # comma separated list of allowed hosts. May use suffixes and * as wildcard
+   ALLOWED_HOSTS=
    ```
-   - any string w/o space can be used as secret key. For a truly random secret that's in a format used by django use:   
+   for unit tests and using the app only on the local machine, try `ALLOWED_HOSTS=localhost, testserver`
+   - any string w/o space can be used as secret key. For a truly random secret in the standard format use:   
    ```python
    from django.core.management.utils import get_random_secret_key
    print( get_random_secret_key() )
@@ -48,6 +51,8 @@ All project-related documents are in the [Project Wiki](../../wiki/Home)
 
 Iterations
 * [Iteration 1 Plan](../../wiki/Iteration%201%20Plan) and [Task Board](../../projects/1)
+* [Iteration 2 Plan](../../wiki/Iteration%202%20Plan)
+* [Iteration 3 Plan](../../wiki/Iteration%203%20Plan)
 
 
 [django-tutorial]: https://docs.djangoproject.com/en/3.1/intro/tutorial01/
