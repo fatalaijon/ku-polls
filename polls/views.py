@@ -33,6 +33,13 @@ def detail(request, pk):
         messages.error(request, f"Question {question_id} is not available")
         return redirect("polls:index")
     context = {'question': question}
+    # add user's current choice to context
+    if request.user.is_authenticated:
+        print(f"{request.user.username} is authenticated")
+        vote = get_vote_for_user(request.user, question)
+        if vote:
+            print("Adding authenticated user's choice to context", vote.choice.choice_text)
+            context['current_choice'] = vote.choice
     return render(request, 'polls/detail.html', context)
 
 @login_required
@@ -67,7 +74,7 @@ def vote(request, pk):
     # Does user already have a Vote for this question?
     vote = get_vote_for_user(request.user, question)
     if not vote:
-        vote = Vote(user=request.user, question=question, choice=selected_choice)
+        vote = Vote(user=request.user, choice=selected_choice)
     else:
         # change an existing vote
         vote.choice = selected_choice
@@ -77,8 +84,8 @@ def vote(request, pk):
 def get_vote_for_user(user, poll_question):
     """Find and return an existing vote for a user on a poll question."""
     try:
-        # vote.question is 
-        votes = Vote.objects.filter(user=user).filter(question=poll_question)
+        #votes = Vote.objects.filter(user=user).filter(question=poll_question)
+        votes = Vote.objects.filter(user=user).filter(choice__question=poll_question)
     except Votes.DoesNotExist:
         return None
     if len(votes) == 0:

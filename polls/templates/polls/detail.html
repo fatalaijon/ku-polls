@@ -12,12 +12,23 @@
 {% csrf_token %}
 {% for choice in question.choice_set.all %}
     <input type='radio' name='choice' id='choice{{ forloop.counter }}' 
-           value='{{choice.id}}' />
+           value='{{choice.id}}' 
+           {% if current_choice.id == choice.id %} checked {% endif %} 
+           />
     <label for='choice{{ forloop.counter }}'> {{choice.choice_text}}</label>
     <br/>
 {% endfor %}
 <p>
-<input type='submit' value='Vote'/>
+{% if current_choice %}
+   You previously voted for {{current_choice.choice_text}}
+{% endif %}
+<p>
+{% if user.is_authenticated %}
+   <input type='submit' value='Vote'/>
+{% else %}
+   Please <a href="{% url 'login' %}">login</a> to vote
+{% endif %}
+or <a href="{% url 'polls:results' question.id %}">view results</a>.
 </p>
 </form>
 Back to <a href="{% url 'polls:index'%}">List of Polls</a>.

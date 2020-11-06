@@ -36,10 +36,11 @@ TODO: Document migrations and data import (once we have some polls to import!).
 
 ## Demo User Accounts
 
-The application has 2 demo user accounts:
+The application has 3 demo user accounts:
 
 * `demo` password `kansadaeng`
 * `harry` password `Hackme`
+* `sally` password `himitsu`
 
 ## Project Documents
 

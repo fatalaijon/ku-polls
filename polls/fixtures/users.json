@@ -1,0 +1,56 @@
+[
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$nCtJDcN6xjic$dCSEDMKND8LeIj4EINQoD89P4iHeRaj7KFMoeHimRqc=",
+    "last_login": "2020-11-06T06:24:21.323Z",
+    "is_superuser": false,
+    "username": "demo",
+    "first_name": "Demo",
+    "last_name": "User",
+    "email": "demo@localhost",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-11-05T07:29:38.345Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$zHU4lvk0YndC$74KIh39n0ELvfabhjVdvAW2UO8n7ku6xv8S91OH6ngo=",
+    "last_login": "2020-11-06T07:22:34.991Z",
+    "is_superuser": false,
+    "username": "harry",
+    "first_name": "Harry",
+    "last_name": "Hacker",
+    "email": "harry@hackerone.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-11-05T07:30:42.045Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$cpVXGxHPPiIK$7mLW+kP78UkPkra9gLIZzHRv6zqnWupXqUfBd5ZDDls=",
+    "last_login": "2020-11-06T07:19:53.973Z",
+    "is_superuser": false,
+    "username": "sally",
+    "first_name": "Sally",
+    "last_name": "Cracker",
+    "email": "sally@hackerone.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2020-11-06T07:09:10.796Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

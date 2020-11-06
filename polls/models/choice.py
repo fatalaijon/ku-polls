@@ -28,7 +28,6 @@ class Choice(models.Model):
 
 class Vote(models.Model):
     """A vote by a user for one choice (answer) to a poll Question."""
-    question = models.ForeignKey(Question, on_delete=models.CASCADE, null=True)
     choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
     user = models.ForeignKey(
             django.contrib.auth.models.User,
@@ -38,4 +37,4 @@ class Vote(models.Model):
             )
 
     def __str__(self):
-       return f"Vote by {self.user.username} for choice {self.choice.id} on question {self.question}"
+       return f"Vote by {self.user.username} for choice {self.choice.id} on question {self.choice.question}"
