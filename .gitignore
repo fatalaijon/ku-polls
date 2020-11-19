@@ -7,6 +7,8 @@ __pycache__/
 wiki/
 # my config notes
 configure.txt
+# my base fixtures
+/fixtures/
 
 # IDE files
 .vscode
