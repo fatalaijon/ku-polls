@@ -17,67 +17,7 @@ Requires Python 3.6 or newer, pip, and virtualenv.
 
 ## Configure the Application
 
-Download the code to a local directory using either `git clone` or a ZIP file provided by Github. Do the following once in the directory where you placed the project files.
-
-`python3` refers to the Python 3 command. It may be `python` on some hosts.
-
-1. Update your Python `pip` to the current version.
-   ```
-   python3 -m pip install --upgrade pip
-   ```
-
-2. Install virtualenv
-   ```
-   python3 -m pip install virtualenv
-   ```
-
-3. Create a virtualenv subdirectory named `env` and activate it. 
-   ```
-   cmd> virtualenv env
-   # Activate the virtualenv on Linux and MacOS
-   cmd> source env/bin/activate
-   # On MS Windows use
-   cmd> env\Scripts\activate
-   (env)cmd>
-   ```
-   Notice that the prompt changes when virtualenv is active.
-
-4. Install required packages inside the virtualenv. This will download the packages using the Internet, so a network connection is required.  Will down approximately 60MB of Python packages and install them in the `env/lib` directory, not in your system's Python library.
-   ```
-   # install required packages
-   (env)cmd> python3 -m pip install -r requirements.txt
-   ```
-
-5. In the project root directory, copy `sample.env` to `.env` (file name begins with "."). Then edit `.env`  and set values of these variables as desired.  
-   ```
-   SECRET_KEY=any-random-string-will-work
-   # set DEBUG to True for testing and local development
-   DEBUG=False   
-   # comma separated list of allowed hosts. May use suffixes and * as wildcard
-   ALLOWED_HOSTS=localhost, testserver
-   TIME_ZONE=Asia/Bangkok
-   ```
-   - Leave ALLOWED\_HOSTS set to nothing or `*` to allow all hosts.
-   - For a truly random secret in the standard format run this code at a Python command prompt:   
-   ```python
-   from django.core.management.utils import get_random_secret_key
-   print( get_random_secret_key() )
-   ```
-
-6. Run migrations to initialize the database:
-   ```
-   python3 manage.py migrate
-   ```
-
-7. Import data for some initial polls and users:
-   ```
-   python3 manage.py loaddata polls users
-   ```
-
-8. Exit the virtualenv (or stay in virtualenv and skip down to [running the application](#running-the-application)):
-   ```
-   (env)cmd> deactivate   
-   ```
+See [Installation](../../wiki/Installation) in the project wiki
 
 ## Running the Application
 
@@ -132,7 +72,7 @@ All project-related documents are in the [Project Wiki](../../wiki/Home)
 Iterations
 
 * [Iteration 1 Plan](../../wiki/Iteration%201%20Plan) and [Task Board](../../projects/1)
-* [Iteration 2 Plan](../../wiki/Iteration%202%20Plan)
+* [Iteration 2 Plan](../../wiki/Iteration%202%20Plan) and [Task Board](../../projects/2)
 * [Iteration 3 Plan](../../wiki/Iteration%203%20Plan)
 
 
