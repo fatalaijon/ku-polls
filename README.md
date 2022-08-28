@@ -74,3 +74,11 @@ Iterations
 
 [django-tutorial]: https://docs.djangoproject.com/en/3.1/intro/tutorial01/
 
+## How to Run
+
+Users provided by the initial data (users.json):
+
+| Username  | Password    |
+|-----------|-------------|
+| demo1     | Vote4me!    |
+| demo2     | Vote4me2    |
