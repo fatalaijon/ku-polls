@@ -7,6 +7,7 @@ __pycache__/
 wiki/
 # my config notes
 configure.txt
+untracked
 
 # IDE files
 .vscode
