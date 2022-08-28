@@ -67,7 +67,7 @@ All project-related documents are in the [Project Wiki](../../wiki/Home)
 
 [Vision Statement](../../wiki/Vision%20Statement)
 
-[Requirements](../../wiki/Vision%20Statements)
+[Requirements](../../wiki/Requirements)
 
 Iterations
 
