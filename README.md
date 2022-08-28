@@ -49,14 +49,6 @@ Start the server. Optionally, you can specify a port to listen on as extra comma
 Visit <a href="http://localhost:8000">http://localhost:8000</a>
 
 
-## Demo User Accounts
-
-The users data included with the application has 3 demo user accounts:
-
-* `demo` password `kansadaeng`
-* `harry` password `Hackme`
-* `sally` password `himitsu`
-
 ## Project Documents
 
 All project-related documents are in the [Project Wiki](../../wiki/Home)
@@ -74,11 +66,18 @@ Iterations
 
 [django-tutorial]: https://docs.djangoproject.com/en/3.1/intro/tutorial01/
 
-## How to Run
 
-Users provided by the initial data (users.json):
+
+## Demo User Accounts
+
+The users data included with the application has 3 demo user accounts:
 
 | Username  | Password    |
 |-----------|-------------|
-| demo1     | Vote4me!    |
-| demo2     | Vote4me2    |
+| demo      | kansadaeng  |
+| harry     | Hackme      |
+| sally     | himitsu     |
+| demo1 +   | Vote4me!    |
+| demo2 +   | Vote4me2    |
+
++ = these may not exist in `users` fixture file.
