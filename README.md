@@ -7,7 +7,7 @@ and adds additional functionality.
 
 ## Requirements
 
-Requires Python 3.6 or newer and the packages listed in [requirements.txt](requirements.txt).
+Requires Python 3.8 or newer and the packages listed in [requirements.txt](requirements.txt).
 
 Install required packages using `pip install -r requirements.txt` or create a virtualenv.
 
