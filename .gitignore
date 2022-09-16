@@ -11,6 +11,8 @@ configure.txt
 /fixtures/
 
 # IDE files
+.idea
+.project
 .vscode
 *.swp
 

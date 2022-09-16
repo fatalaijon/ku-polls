@@ -1,23 +1,28 @@
 # Web Polls for Kasetsart University
 
+## ISP STUDENTS: You can copy the STRUCTURE of this file but not the TEXT
+
 A polls application for [Individual Software Process](https://cpske.github.io/ISP) course at [Kasetsart University](https://ku.ac.th).
 
 This application is for conducting a poll or survey, written in Python using Django. It is based on the [Django Tutorial project][django-tutorial], 
 and adds additional functionality.
 
-## ISP STUDENTS: DON'T COPY THIS TEXT
-
-This file contains an example but you must write 100% of your own README.
-
-You can copy the *structure* but none of the text.
-
 ## Requirements
 
-Requires Python 3.6 or newer, pip, and virtualenv. 
+Requires Python 3.8 or newer and virtualenv.  Required Python packages are listed in [requirements.txt](). 
 
 ## Configure the Application
 
-See [Installation](../../wiki/Installation) in the project wiki
+See [Installation](../../wiki/Installation) in the project wiki.
+
+Brief Instructions:
+
+1. Copy `sample.env` to `.env` and edit the settings.
+2. Create a virtualenv: `virtualenv env`
+3. Activate the virtualenv and run `pip install -r requirements.txt`
+4. Perform migrations and create database: `python manage.my migrate`
+5. Add polls and users to database: `python manage.py loaddata polls users`
+
 
 ## Running the Application
 
@@ -43,7 +48,7 @@ See [Installation](../../wiki/Installation) in the project wiki
    python3 manage.py runserver 12345
    ```
 
-3. In a web browser, navigate to [http://localhost:8000](http://localhost:8000)
+3. In a web browser, navigate to <http://localhost:8000>
 
 4. To stop the server, press CTRL-C in the terminal window. Then exit the virtualenv by closing the window or typing:
    ```
@@ -52,7 +57,7 @@ See [Installation](../../wiki/Installation) in the project wiki
 
 ## Demo User Accounts
 
-Sample polls and users data included with the application. It has 4 demo user accounts:
+Sample polls and users data are included. There are 4 demo accounts:
 
 * `demo1` password `Hackme1`
 * `demo2` password `Hackme2`
