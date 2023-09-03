@@ -1,7 +1,7 @@
 # Web Polls for Kasetsart University
 [![Django Tests](https://github.com/fatalaijon/ku-polls/actions/workflows/django.yml/badge.svg)](https://github.com/fatalaijon/ku-polls/actions/workflows/django.yml)
 
-### ISP STUDENTS: You can copy the STRUCTURE of this file but not the TEXT
+### ISP STUDENTS: You can copy the STRUCTURE of this file but not the actual TEXT
 
 A polls application for [Individual Software Process](https://cpske.github.io/ISP) course at [Kasetsart University](https://ku.ac.th).
 
@@ -10,7 +10,7 @@ and adds additional functionality.
 
 ## Requirements
 
-Requires Python 3.8 or newer and virtualenv.  Required Python packages are listed in [requirements.txt](). 
+Requires Python 3.8 or newer.  Required Python packages are listed in [requirements.txt](./requirements.txt). 
 
 ## Configure the Application
 
@@ -19,19 +19,19 @@ See [Installation](../../wiki/Installation) in the project wiki.
 Brief Instructions:
 
 1. Copy `sample.env` to `.env` and edit the settings.
-2. Create a virtualenv: `virtualenv env`
+2. Create a virtualenv: `python -m venv env`
+   - Or create it using the virtualenv extension: `virtualenv env`
 3. Activate the virtualenv and run `pip install -r requirements.txt`
-4. Perform migrations and create database: `python manage.my migrate`
-5. Add polls and users to database: `python manage.py loaddata polls users`
-
+4. Perform migrations and create a database: `python manage.my migrate`
+5. Add polls and users to the database: `python manage.py loaddata polls users`
 
 ## Running the Application
 
-1. Start the server in the virtualenv. 
+1. Start the server in the virtual env. 
    ```
-   # activate the virtualenv on Linux and MacOS
+   # Activate the virtual env on Linux and MacOS
    source env/bin/activate
-   # on MS Windows, use:
+   # Or, on MS Windows:
    env\Scripts\activate
 
    # run the django server
@@ -44,7 +44,7 @@ Brief Instructions:
    Starting development server at http://127.0.0.1:8000/
    Quit the server with CONTROL-C.
    ```
-   If you get a message that the port is unavailable, then run the server on a different port (1024 thru 65535) using
+   If you get a message that the port is unavailable, then run the server on a different port (1024 thru 65535). For example:
    ```
    python3 manage.py runserver 12345
    ```
