@@ -1,6 +1,7 @@
 # Web Polls for Kasetsart University
+[![Django Tests](https://github.com/fatalaijon/ku-polls/actions/workflows/django.yml/badge.svg)](https://github.com/fatalaijon/ku-polls/actions/workflows/django.yml)
 
-## ISP STUDENTS: You can copy the STRUCTURE of this file but not the TEXT
+### ISP STUDENTS: You can copy the STRUCTURE of this file but not the TEXT
 
 A polls application for [Individual Software Process](https://cpske.github.io/ISP) course at [Kasetsart University](https://ku.ac.th).
 
