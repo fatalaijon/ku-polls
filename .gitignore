@@ -7,8 +7,12 @@ __pycache__/
 wiki/
 # my config notes
 configure.txt
+# my base fixtures
+/fixtures/
 
 # IDE files
+.idea
+.project
 .vscode
 *.swp
 
@@ -59,6 +63,10 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
 
 # Translations
 *.mo
@@ -110,7 +118,7 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
-# Environments
+# Environments and settings
 .env
 .venv
 env/
@@ -123,16 +131,5 @@ venv.bak/
 .spyderproject
 .spyproject
 
-# Rope project settings
-.ropeproject
-
 # mkdocs documentation
 /site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/

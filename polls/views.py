@@ -81,21 +81,24 @@ def vote(request, pk):
     vote.save()
     return HttpResponseRedirect(reverse('polls:results',args=(question_id,)))
 
+
 def get_vote_for_user(user, poll_question):
     """Find and return an existing vote for a user on a poll question."""
     try:
         #votes = Vote.objects.filter(user=user).filter(question=poll_question)
-        votes = Vote.objects.filter(user=user).filter(choice__question=poll_question)
-    except Votes.DoesNotExist:
+        votes = user.vote_set.filter(choice__question=poll_question)
+    except Vote.DoesNotExist:
         return None
     if len(votes) == 0:
         return None
     if len(votes) > 1:
+        # This should never occur. If it does then there's a bug somewhere.
         logger = logging.getLogger(__name__)
-        logger.error(f"user {user} has {len(votes)} votes for poll {poll_question.question_text}")
-        for vote in votes:
-            logger.error(str(vote))
+        logger.error(f"user {user} has {len(votes)} votes for poll question {poll_question.id}")
+        all_votes = ", ".join([str(vote) for vote in votes])
+        logger.error(f"user votes: {all_votes}")
     return votes[0]  
+
 
 def results(request, pk):
     """Show the voting results for a poll question"""
