@@ -10,7 +10,7 @@ and adds additional functionality.
 
 ## Requirements
 
-Requires Python 3.8 or newer.  Required Python packages are listed in [requirements.txt](./requirements.txt). 
+Requires Python 3.8 or newer and the packages listed in [requirements.txt](requirements.txt).
 
 ## Configure the Application
 
@@ -84,3 +84,18 @@ Iterations
 
 [django-tutorial]: https://docs.djangoproject.com/en/3.1/intro/tutorial01/
 
+
+
+## Demo User Accounts
+
+The users data included with the application has 3 demo user accounts:
+
+| Username  | Password    |
+|-----------|-------------|
+| demo      | kansadaeng  |
+| harry     | Hackme      |
+| sally     | himitsu     |
+| demo1 +   | Vote4me!    |
+| demo2 +   | Vote4me2    |
+
++ = these may not exist in `users` fixture file.
