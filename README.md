@@ -1,5 +1,6 @@
 # Web Polls for Kasetsart University
 [![Django Tests](https://github.com/fatalaijon/ku-polls/actions/workflows/django.yml/badge.svg)](https://github.com/fatalaijon/ku-polls/actions/workflows/django.yml)
+[![Pylint](https://github.com/fatalaijon/ku-polls/actions/workflows/pylint.yml/badge.svg)](https://github.com/fatalaijon/ku-polls/actions/workflows/pylint.yml)
 
 ### ISP STUDENTS: You can copy the STRUCTURE of this file but not the actual TEXT
 
