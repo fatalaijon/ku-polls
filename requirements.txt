@@ -1,4 +1,4 @@
 # Packages needed to run this project
-Django == 4.0.1
+Django == 4.1.10
 python-decouple == 3.1
 pytz >= 2019.2
