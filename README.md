@@ -2,12 +2,18 @@
 [![Django Tests](https://github.com/fatalaijon/ku-polls/actions/workflows/django.yml/badge.svg)](https://github.com/fatalaijon/ku-polls/actions/workflows/django.yml)
 [![Pylint](https://github.com/fatalaijon/ku-polls/actions/workflows/pylint.yml/badge.svg)](https://github.com/fatalaijon/ku-polls/actions/workflows/pylint.yml)
 
+<!---
 ### ISP STUDENTS: You can copy the STRUCTURE of this file but not the actual TEXT
+--->
 
 A polls application for [Individual Software Process](https://cpske.github.io/ISP) course at [Kasetsart University](https://ku.ac.th).
 
 This application is for conducting a poll or survey, written in Python using Django. It is based on the [Django Tutorial project][django-tutorial], 
 and adds additional functionality.
+
+| **Home Page**    | ![Home page](./images/ku-polls0.png)  |
+|:-----------------|:---------------------|
+| **Voting Page**  | ![Voting page](./images/ku-polls1.png) |
 
 ## Requirements
 
@@ -76,7 +82,8 @@ All project-related documents are in the [Project Wiki](../../wiki/Home)
 
 [Requirements](../../wiki/Requirements)
 
-Iterations
+
+* [Development Plan](../../wiki/Development%20Plan)
 
 * [Iteration 1 Plan](../../wiki/Iteration%201%20Plan) and [Task Board](../../projects/1)
 * [Iteration 2 Plan](../../wiki/Iteration%202%20Plan) and [Task Board](../../projects/2)
